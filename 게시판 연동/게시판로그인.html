@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>게시판로그인</title>
+    <style>
+        body {
+            background-color: yellowgreen;
+        }
+        form{
+
+            right: 10px;
+            padding-top: 300px;
+            padding-left: 650px;
+        }
+    </style>
+</head>
+<body style=color:black;>
+    <form>
+        <h1>게시판</h1>
+            <p><input type="text" name="id" id="id_name" placeholder="아이디"></p>
+            
+            <p><input type="password" name="pwd" placeholder="비밀번호" id="pwd_name" onkeypress="check(event)"></p>
+            
+            
+            <p>
+            <a href="file:///C:/Program%20Files%20%EB%B0%94%ED%83%95%ED%99%94%EB%A9%B4/HTML/%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EB%8F%99/%EA%B2%8C%EC%8B%9C%ED%8C%90.html">
+            <input type="button" name="login" value="로그인" id="test" onclick="click1()">
+            </a>
+            </p>
+    </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        console.log(axios);
+        var id_name = document.getElementById("id_name");
+        var pwd_name = document.getElementById("pwd_name");
+        function click1(){
+        if (id_name.value == "1234" && pwd_name.value == "1234")
+        {
+            alert("로그인 성공!");
+            location.href = "file:///C:/Program%20Files%20%EB%B0%94%ED%83%95%ED%99%94%EB%A9%B4/HTML/%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EB%8F%99/%EA%B2%8C%EC%8B%9C%ED%8C%90.html";
+        }
+        else if (id_name.value !="1234"){
+            alert("아이디를 잘못입력하였습니다.");
+            location.reload();
+        }
+        else {
+            alert("비밀번호를 잘못입력하였습니다.");
+            location.reload();
+        }
+    }
+    function check (event) {
+        console.log(event)
+        if (event.code == 'Enter')
+        {
+            click1();
+        }
+    }
+    </script>
+    
+</body>
+</html>

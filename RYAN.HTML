@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cuty Ryan!</title>
+<style>
+    #wrapper {
+        position: relative;
+    }
+    #face  {
+        width: 550px;
+        height: 550px;
+
+        border: 15px solid black;
+        border-radius: 282px;
+        background: goldenrod;
+    }
+    #ear_left  {
+        width: 100px;
+        height: 100px;
+        
+        border:15px solid black;
+        border-radius: 70px;
+        background: goldenrod;
+        position:absolute;
+        top: 30px;
+        left: 30px;
+        z-index: -1;
+    }
+    #ear_right  {
+        width: 100px;
+        height: 100px;
+        
+        border:15px solid black;
+        border-radius: 70px;
+        background: goldenrod;
+        position:absolute;
+        top: 30px;
+        right: 970px;
+        z-index: -1;
+    }
+    #eyebrow_left   {
+        width: 130px;
+        height: 30px;
+
+    border-radius: 60px;
+    background: black;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    animation-name: eyebrow_move2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    }
+    #eyebrow_right   {
+        width: 130px;
+        height: 30px;
+
+    border-radius: 60px;
+    background: black;
+    position: absolute;
+    top: 200px;
+    left: 340px;
+    animation-name: eyebrow_move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+    }
+    #eye_left   {
+        width: 50px;
+        height: 50px;
+        
+        border-radius: 60px;
+        background: black;
+        position:absolute;
+        top: 260px;
+        left: 140px;
+        animation-name: eye_move;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+    #eye_right   {
+        width: 50px;
+        height: 50px;
+        
+        border-radius: 60px;
+        background: black;
+        position:absolute;
+        top: 260px;
+        left: 375px;
+        animation-name: eye_move2;
+        animation-duration: 1.1s;
+        animation-iteration-count: 1;
+    }
+    #nose   {
+        width: 55px;
+        height: 55px;
+        
+        border-radius: 60px;
+        background: black;
+        position:absolute;
+        top: 360px;
+        left: 257px;
+        z-index: 4;
+        animation-name: nose_move;
+        animation-duration: 1.1s;
+        animation-iteration-count: 1;
+    }
+    #mouth_left {
+        width: 70px;
+        height: 70px;
+
+        border-radius: 60px;
+        background: white;
+        position:absolute;
+        border: 10px solid black;
+        bottom: 120px;
+        left: 200px;
+        z-index: 2;
+    }
+    #mouth_right {
+        width: 70px;
+        height: 70px;
+
+        border-radius: 60px;
+        background: white;
+        position:absolute;
+        border: 10px solid black; 
+        bottom: 120px;
+        right: 1150px;
+        z-index: 2;
+
+    }
+    #eraser {
+        width:100px;
+        height:40px;
+        
+        background: white;
+        position: absolute;
+
+        top: 394px;
+        left: 240px;
+        z-index: 3;
+
+
+    }
+
+    @keyframes  eyebrow_move{
+        50% {
+            transform: rotate(-30deg)   
+        }
+        
+        to{
+            transform: rotate(30deg)
+        }
+    }
+
+    @keyframes  eyebrow_move2{
+        50%{
+            transform: rotate(30deg)
+        }
+        to{
+            transform: rotate(-30deg)
+        }
+        
+    }
+    @keyframes  eye_move{
+        
+    from    {
+        margin-left:100%;
+    }
+    to {
+                margin-left: 0;
+        }
+    }
+    @keyframes  eye_move2{
+    
+    from    {
+        margin-left:100%;
+    }
+    to {
+                margin-left: 0;
+        }
+    }
+    @keyframes nose_move {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+    }
+    </style>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <div id="face"></div>
+        <div id="ear_left"></div>
+        <div id="ear_right"></div>
+    
+        <div id="eyebrow_left"></div>
+        <div id="eyebrow_right"></div>
+    
+        <div id="eye_left"></div>
+        <div id="eye_right"></div>
+    
+        <div id="mouth_left"></div>
+        <div id="mouth_right"></div>
+    
+        <div id="nose"></div>
+        <div id="eraser"></div>           
+    </div>
+    
+</body>
+</html>

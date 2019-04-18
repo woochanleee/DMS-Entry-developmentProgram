@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="sum" onkeypress="check(event)">
+    <div id="view"></div>
+    <div id="view_2"></div>
+    <div id="introduce"></div>
+    <div id="warning"></div>
+
+    <a href="" id="address">
+    </a>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+    var id = document.getElementById("view");
+    var nickname = document.getElementById("view_2");
+    var n1 = document.getElementById("sum");
+    var adr = document.getElementById("address");
+    var introduce = document.getElementById("introduce");
+    var warn = document.getElementById("warning");
+
+    function check (event) {
+        if (event.code === 'Enter') {
+            alert("wow 성공!!!");
+            axios.get(`https://api.github.com/user/${n1.value}`)
+        .then(res =>{
+            console.log(res)
+            warning.innerText = ""
+            id.innerText = res.data.login;
+            nickname.innerText = res.data.name;
+            adr.innerText = "이동하기";
+            address.href = res.data.html_url
+            introduce.innerText = res.data.bio;
+            if (res.data.name === null)
+            nickname.innerText = res.data.login;
+            if (res.data.bio === null)
+            introduce.innerText="소개말이 없어요";
+            })
+            
+        .catch(err => {
+            warning.innerText = "없는 사용자입니다."
+            id.innerText = "";
+            nickname.innerText = "";
+            adr.innerText = "";
+            introduce.innerText = "";
+            console.log(err)
+            })
+        console.log(axios)
+            
+        }
+    }
+    
+    
+
+    </script>
+</body>
+</html>

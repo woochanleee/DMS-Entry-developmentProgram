@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>글 내용</title>
+</head>
+<body>
+    비밀번호: <input type="password" id="pwd" onkeypress="check(event)">
+    <input type="button"  id="submit" value="입력" onclick="pwd()">
+    <script>
+    function pwd() {
+        var _n1 = document.getElementById("pwd");
+        if (_n1.value == 1234) {
+            alert("인증되었습니다.");
+            location.href = "https://www.naver.com";
+        }
+        else {
+            alert("비밀번호를확인해주세요.");
+        }
+    }
+
+    function check (event) {
+        console.log(event)
+        if (event.code == 'Enter')
+        {
+            pwd();
+        }
+    }
+    </script>
+</body>
+</html>
